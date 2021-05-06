@@ -11,7 +11,18 @@
 
     <artifactId>SpringCloud-provider-8001</artifactId>
     <dependencies>
+        <!--添加对eureka的依赖，用于注册-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <version>1.4.6.RELEASE</version>
+        </dependency>
 
+        <!--actuator 完善eureka的监控信息-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
         <!--添加实体类的依赖-->
         <dependency>
             <groupId>com.learn</groupId>
