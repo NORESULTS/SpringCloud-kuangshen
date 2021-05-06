@@ -12,8 +12,8 @@
         <module>SpringCloud-provider-8001</module>
         <module>SpringCloud-consumer-80</module>
         <module>SpringCloud-eureka-7001</module>
-<!--        <module>SpringCloud-eureka-7002</module>-->
-<!--        <module>SpringCloud-eureka-7003</module>-->
+        <module>SpringCloud-eureka-7002</module>
+        <module>SpringCloud-eureka-7003</module>
     </modules>
 
 
