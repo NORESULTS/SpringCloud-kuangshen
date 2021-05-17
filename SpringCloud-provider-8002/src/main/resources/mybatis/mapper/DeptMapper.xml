@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--配置可以从 https://mybatis.org/mybatis-3/zh/getting-started.html 中直接拷贝-->
+
+<mapper namespace="com.learn.provider.dao.DeptDao">
+
+    <insert id="addDept" parameterType="Dept">
+        insert into dept (db_name,db_source)
+        values (#{dbName},DATABASE())
+    </insert>
+
+    <select id="queryById" resultType="Dept" parameterType="Long">
+        select * from dept where dept_no = #{deptNo}
+    </select>
+
+    <select id="queryAll" resultType="Dept">
+        select * from dept
+
+    </select>
+
+</mapper>

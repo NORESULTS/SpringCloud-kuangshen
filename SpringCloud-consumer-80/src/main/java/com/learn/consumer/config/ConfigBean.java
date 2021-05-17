@@ -1,5 +1,6 @@
 package com.learn.consumer.config;
 
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
@@ -17,6 +18,7 @@ public class ConfigBean {
      * @return
      */
     @Bean
+    @LoadBalanced // 通过这个注解，实现在客户端消费者要去通过Rest访问提供者时，去做ribbon负载均衡
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }

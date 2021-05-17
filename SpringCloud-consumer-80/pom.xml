@@ -12,6 +12,21 @@
     <artifactId>SpringCloud-consumer-80</artifactId>
 
     <dependencies>
+
+        <!--负载均衡-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-ribbon</artifactId>
+            <version>1.4.6.RELEASE</version>
+        </dependency>
+
+        <!--从eureka中获取可用提供者，也为负载均衡提供帮助-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <version>1.4.6.RELEASE</version>
+        </dependency>
+
         <!--实体类-->
         <dependency>
             <groupId>com.learn</groupId>

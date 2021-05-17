@@ -22,7 +22,10 @@ public class DeptConsumerController {
     @Autowired
     private RestTemplate restTemplate;
 
-    public static final String REST_URL_PREFIX = "http://localhost:8001";
+//    public static final String REST_URL_PREFIX = "http://localhost:8001";
+    // 引用ribbon后，访问地址变为一个变量，我们改为用服务名来访问
+    public static final String REST_URL_PREFIX = "http://SpringCloud-provider-ribbon-spring-application";
+//    public static final String REST_URL_PREFIX = "http://SpringCloud-provider-8001-spring-application";
 
 
     @PostMapping("/consumer/dept/add")
