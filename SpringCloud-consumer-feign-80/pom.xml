@@ -9,8 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>SpringCloud-consumer-80</artifactId>
-
+    <artifactId>SpringCloud-consumer-feign-80</artifactId>
     <dependencies>
 
         <!--负载均衡-->
@@ -49,6 +48,7 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
+
 
     </dependencies>
 
