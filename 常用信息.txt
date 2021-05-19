@@ -1,7 +1,7 @@
 
+
+
 SpringCloudEurekaServer7001Starter
-
-
 
 SpringCloudEurekaServer7002Starter
 
@@ -18,8 +18,54 @@ SpringCloudConsumerFeign80Starter
 
 http://localhost:80/
 
+http://eureka7001.com:7001/
+
+http://eureka7002.com:7002/
+
+http://eureka7003.com:7003/
+
+
+
+
 http://localhost:8001/dept/list
 
 http://localhost:80/consumer/dept/list
 
+-------------------------------------------------------------------------
 
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : localhost
+ Source Server Type    : MySQL
+ Source Server Version : 80025
+ Source Host           : localhost:3306
+ Source Schema         : db02
+
+ Target Server Type    : MySQL
+ Target Server Version : 80025
+ File Encoding         : 65001
+
+ Date: 19/05/2021 23:16:31
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for dept
+-- ----------------------------
+DROP TABLE IF EXISTS `dept`;
+CREATE TABLE `dept`  (
+  `DEPT_NO` bigint(0) NOT NULL AUTO_INCREMENT,
+  `DB_NAME` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `DB_SOURCE` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`DEPT_NO`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of dept
+-- ----------------------------
+INSERT INTO `dept` VALUES (1, '技术部', 'db02');
+
+SET FOREIGN_KEY_CHECKS = 1;
