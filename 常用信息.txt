@@ -19,7 +19,13 @@ SpringCloudConsumerFeign80Starter
 http://localhost:80/
 
 http://localhost:8001/dept/list
-
+http://localhost:8001/dept/get/1
 http://localhost:80/consumer/dept/list
+http://localhost:80/consumer/dept/get/1
 
-
+CREATE TABLE `dept` (
+  `dept_no` int(20) NOT NULL,
+  `db_name` varchar(255) DEFAULT NULL,
+  `db_source` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`dept_no`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

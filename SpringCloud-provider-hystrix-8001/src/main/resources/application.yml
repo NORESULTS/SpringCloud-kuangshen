@@ -1,0 +1,53 @@
+# 单词不能拼错，有时拼错是不会提示的
+
+server:
+  port: 8001
+
+spring:
+  application:
+#    name: SpringCloud-provider-8001-spring-application
+    name: SpringCloud-provider-ribbon-spring-application # 使用ribbon负载均衡时，多个提供者公用一个应用名，方便消费者用一个名字通吃所有提供者
+  # 配置数据源
+  datasource:
+    # 这俩是干啥用的？？？？
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver  #  继承了com.mysql.jdbc.Driver
+    # 数据库地址
+    url: jdbc:mysql://localhost:3306/db01?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123
+mybatis:
+  # mybatis别名配置,对应数据类的包路径
+  type-aliases-package: com.learn.api.pojo
+  # mybatis核心配置文件
+  config-location: classpath:mybatis/mybatis-config.xml
+  # 数据类对应的mapper映射xml文件路径
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+
+# mybatis配置中，config-location 与 configuration只能同时存在一个，不然会报错：
+# Property 'configuration' and 'configLocation' can not specified with together
+# 解决方法：开启一个即可
+#  configuration:
+#    # 开启驼峰功能
+#    # 开启前 数据库表列：user_name 实体类属性：user_name
+#    # 开启后 数据库表列：user_name 实体类属性：userName
+#    map-underscore-to-camel-case: true
+
+
+#Eureka注册配置
+eureka:
+  client:
+    service-url: # 当前服务的发布到哪些eureka节点上
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: this is provider info for provider-hystrix-8001 # 修改eureka管理页面上application 的status描述信息
+    prefer-ip-address: false # 鼠标悬浮到项目描述时，页面左下角提示的项目描述连接前缀。当团队跨地域开发时，可能会用到实际IP地址来访问项目的情况。  true 显示实际IP  false 默认 不显示实际IP，只是显示localhost
+#配置在Eureka管理页面中，点击项目后返回的描述信息
+#spring-boot-starter-actuator 添加这个依赖后才可用
+info:
+  app.name: SpringCloud-provider-8001-spring-application's app name
+  company.name: liangchao's company
+  customer.field: this is customer
+
+
