@@ -1,7 +1,7 @@
 
+
+
 SpringCloudEurekaServer7001Starter
-
-
 
 SpringCloudEurekaServer7002Starter
 
@@ -18,10 +18,20 @@ SpringCloudConsumerFeign80Starter
 
 http://localhost:80/
 
+http://eureka7001.com:7001/
+
+http://eureka7002.com:7002/
+
+http://eureka7003.com:7003/
+
+
+
+
 http://localhost:8001/dept/list
 http://localhost:8001/dept/get/1
 http://localhost:80/consumer/dept/list
 http://localhost:80/consumer/dept/get/1
+-------------------------------------------------------------------------
 
 CREATE TABLE `dept` (
   `dept_no` int(20) NOT NULL,
