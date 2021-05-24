@@ -1,10 +1,9 @@
 package com.learn.consumer.controller;
 
 import com.learn.api.pojo.Dept;
-import com.learn.api.service.DeptFeiginService;
+import com.learn.api.service.DeptFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -19,7 +18,7 @@ public class DeptConsumerController {
 
 
     @Autowired
-    private DeptFeiginService deptFeiginService = null; // 不设置=null就报错。DeptFeiginService没必要有实现类，因为feigin注解会使其具备相应的功能。所以这里指定为null，不让其报错就行。
+    private DeptFeignService deptFeiginService = null; // 不设置=null就报错。DeptFeiginService没必要有实现类，因为feigin注解会使其具备相应的功能。所以这里指定为null，不让其报错就行。
 
 
     @PostMapping("/consumer/dept/add")

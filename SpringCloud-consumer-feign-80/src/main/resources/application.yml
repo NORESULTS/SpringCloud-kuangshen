@@ -4,6 +4,10 @@ spring:
   application:
     name: SpringCloud-consumer-feign-80-spring-application
 
+# 开启feign.hystrix的服务降级
+feign:
+  hystrix:
+    enabled: true
 
 # eureka消费者配置
 eureka:
@@ -11,3 +15,4 @@ eureka:
     register-with-eureka: false # 不向eureka注册自己
     service-url:
       defaultZone: http://eureka7002.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+

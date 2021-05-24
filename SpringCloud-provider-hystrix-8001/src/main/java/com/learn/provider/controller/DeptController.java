@@ -33,8 +33,8 @@ public class DeptController {
 
     public Dept hystrixQueryById(@PathVariable("id") Long id) {
         return new Dept().setDeptNo(id).
-                setDbName("id=>"+id+"没有对应的信息，由Hystrix报出错误")
-                .setDbSource("未找到数据库资源，由Hystrix报出错误。");
+                setDbName("id=>"+id+"没有对应的信息，由Hystrix生产者服务熔断报出错误")
+                .setDbSource("未找到数据库资源，由Hystrix生产者报出错误。");
     }
 
 

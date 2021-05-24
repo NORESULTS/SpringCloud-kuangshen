@@ -26,7 +26,7 @@ import java.util.concurrent.ThreadLocalRandom;
  *
  *
  */
-//@Component // 统一在ConfigBean中进行添加Bean，也行
+@Component // 统一在ConfigBean中进行添加Bean，也行
 public class MyRule extends AbstractLoadBalancerRule {
 
     private int total = 0; // 针对当前选中的提供者，访问了多少次

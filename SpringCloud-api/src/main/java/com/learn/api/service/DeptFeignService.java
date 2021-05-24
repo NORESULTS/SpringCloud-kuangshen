@@ -20,9 +20,9 @@ import java.util.List;
  * 接口的方法参数、返回值、作用域声明等，与生产者的Controller接口一模一样，
  * 用到哪个接口方法，直接在fegin接口中添加即可
  */
-//@Component
-@FeignClient(value = "SpringCloud-provider-ribbon-spring-application") // 指定当前Feign接口访问的生产者服务(或集群)
-public interface DeptFeiginService {
+@Component
+@FeignClient(value = "SpringCloud-provider-ribbon-spring-application", fallbackFactory = DeptFeignServiceFallbackFactory.class) // 指定当前Feign接口访问的生产者服务(或集群)
+public interface DeptFeignService {
 
     @GetMapping("/dept/get/{id}")
     public Dept queryById(@PathVariable("id") Long id);
