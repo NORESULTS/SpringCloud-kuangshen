@@ -27,10 +27,17 @@ http://eureka7003.com:7003/
 
 
 
-http://localhost:8001/dept/list
 http://localhost:8001/dept/get/1
 http://localhost:80/consumer/dept/list
 http://localhost:80/consumer/dept/get/1
+
+
+
+http://localhost:9001/hystrix
+http://hystrix-app:port/actuator/hystrix.stream  当目标生产者发生接口请求处理时，这个流监控链接就能PING到数据
+http://localhost:8001/actuator/hystrix.stream
+
+
 -------------------------------------------------------------------------
 
 CREATE TABLE `dept` (
