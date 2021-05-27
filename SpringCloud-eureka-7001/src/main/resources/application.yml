@@ -5,14 +5,14 @@ server:
 #Eureka配置
 eureka:
   instance:
-    hostname: eureka7001.com #eureka服务端的实例名称，也作为访问服务的域名，非localhost时，需要在hosts文件中添加域名映射，才能正常url访问。
+    hostname: www.eureka7001.com #eureka服务端的实例名称，也作为访问服务的域名，非localhost时，需要在hosts文件中添加域名映射，才能正常url访问。
   client:
     register-with-eureka: false # 表示是否将自己注册到Eureka Server。由于这里本身就是注册中心服务，不用注册
     fetch-registry: false # 表示是否从Eureka Server获取注册的服务信息
     service-url: # 其它服务注册进eureka的地址
       # 单机
       #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  # 不配置的话默认为 http://localhost:8761/eureka/
-      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://www.eureka7002.com:7002/eureka/,http://www.eureka7003.com:7003/eureka/
 
 
 

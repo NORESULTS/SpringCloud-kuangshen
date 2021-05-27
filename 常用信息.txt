@@ -18,11 +18,14 @@ SpringCloudConsumerFeign80Starter
 
 http://localhost:80/
 
-http://eureka7001.com:7001/
 
-http://eureka7002.com:7002/
+http://127.0.0.1:7001/
 
-http://eureka7003.com:7003/
+http://www.eureka7001.com:7001/
+
+http://www.eureka7002.com:7002/
+
+http://www.eureka7003.com:7003/
 
 
 
@@ -37,7 +40,22 @@ http://localhost:9001/hystrix
 http://hystrix-app:port/actuator/hystrix.stream  当目标生产者发生接口请求处理时，这个流监控链接就能PING到数据
 http://localhost:8001/actuator/hystrix.stream
 
+# zuul 大写服务名无法访问
+http://localhost:9527/SPRINGCLOUD-PROVIDER-RIBBON-SPRING-APPLICATION/dept/get/1
+# zuul 小写服务名才能访问
+http://localhost:9527/springcloud-provider-ribbon-spring-application/dept/get/1
+http://www.gateway.com:9527/springcloud-provider-ribbon-spring-application/dept/get/1
 
+http://localhost:9527/provider/dept/get/1
+
+http://localhost:9527/super/provider/dept/get/1
+
+-------------------- hosts -----------------------------------------------------
+127.0.0.1       www.eureka7001.com
+127.0.0.1       www.eureka7002.com
+127.0.0.1       www.eureka7003.com
+
+127.0.0.1 		www.gateway.com
 -------------------------------------------------------------------------
 
 CREATE TABLE `dept` (

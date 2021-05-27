@@ -1,0 +1,31 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: SpringCloud-zuul-9527-application
+
+#Eureka注册配置
+eureka:
+  client:
+    service-url: # 当前服务的发布到哪些eureka节点上
+      defaultZone: http://www.eureka7001.com:7001/eureka/,http://www.eureka7002.com:7002/eureka/,http://www.eureka7003.com:7003/eureka/
+  instance:
+    instance-id: this is gateway info for zuul-9527-application # 修改eureka管理页面上application 的status描述信息
+    prefer-ip-address: true # 鼠标悬浮到项目描述时，页面左下角提示的项目描述连接前缀。当团队跨地域开发时，可能会用到实际IP地址来访问项目的情况。  true 显示实际IP  false 默认 不显示实际IP，只是显示localhost
+
+#配置在Eureka管理页面中，点击项目后返回的描述信息
+#spring-boot-starter-actuator 添加这个依赖后才可用
+info:
+  app.name: SpringCloud-zuul-9527-application's app name
+  company.name: liangchao's company
+  customer.field: this is zuul gateway
+
+zuul:
+  # 更改路由的微服务名称,设定自定义的键值对 key必须为 原服务名: xxx.serviceId  服务别名: xxx.path
+  routes:
+    custom.serviceId: springcloud-provider-ribbon-spring-application # 2.2.5 名字为 serviceId
+    custom.path: /provider/**
+  # 设定原微服务名称不可访问
+  ignored-services: springcloud-provider-ribbon-spring-application
+  prefix: /super # 设置公共的前缀

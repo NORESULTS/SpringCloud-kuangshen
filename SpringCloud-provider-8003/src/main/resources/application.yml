@@ -39,7 +39,7 @@ mybatis:
 eureka:
   client:
     service-url: # 当前服务的发布到哪些eureka节点上
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://www.eureka7001.com:7001/eureka/,http://www.eureka7002.com:7002/eureka/,http://www.eureka7003.com:7003/eureka/
   instance:
     instance-id: this is provider info for provider-8003 # 修改eureka管理页面上application 的status描述信息
 
